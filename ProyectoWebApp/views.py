@@ -11,8 +11,6 @@ def home(req):
 def tienda(req):
     return render(req, "ProyectoWebApp/tienda.html")
 
-def blog(req):
-    return render(req, "ProyectoWebApp/blog.html")
 
 def contacto(req):
     return render(req, "ProyectoWebApp/contacto.html")

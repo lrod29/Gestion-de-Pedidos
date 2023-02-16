@@ -16,6 +16,9 @@
                     <span class="section-heading-lower" style="color: yellow">{{post.titulo}}</span>
                     <span class="section-heading-upper">{{post.contenido}}</span>
                 </h2>
+                <div style="text-align: left; font-size 0.8em;">
+                    Autor:{{post.autor}}
+                </div>
                 </div>
             </div>
             </div>
@@ -23,5 +26,19 @@
 
     {% endfor %}
   
+    <section>
+        <div style="width: 75%; margin: auto; text-align:center; color: white;">
+            Categorias: 
+            {% for post in posts %}
+                {% for categoria in post.categorias.all %}
+                
+                    {{categoria.nombre}} &nbsp; &nbsp;
+
+                {% endfor %}
+                
+
+            {% endfor %}
+        </div>
+    </section>
 
 {% endblock %}

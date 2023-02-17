@@ -8,7 +8,6 @@ def home(req):
     return render(req, "ProyectoWebApp/home.html")
 
 
-def tienda(req):
-    return render(req, "ProyectoWebApp/tienda.html")
+
 
 

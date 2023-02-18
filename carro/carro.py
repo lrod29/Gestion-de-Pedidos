@@ -6,15 +6,15 @@ class Carro:
         self.carro=carro
     
     def agregar(self, producto):
-        if(str(producto.id) not in self.carro.keys()):
-            self.carro[producto.id]={
+        if (str(producto.id) not in self.carro):
+            self.carro[str(producto.id)]={
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
                 "precio": str(producto.precio),
                 "cantidad": 0,
                 "imagen": producto.imagen.url
             }
-        self.carro[str(producto.id)]['cantidad'] += cantidad
+        self.carro[str(producto.id)]['cantidad'] += 1
         self.guardar_carro()
 
     def guardar_carro(self):
@@ -31,7 +31,7 @@ class Carro:
         if self.carro[str(producto.id)]['cantidad'] <= 1:
             self.eliminar(producto)
         else:
-            self.carro[str(producto.id)]['cantidad'] -= cantidad
+            self.carro[str(producto.id)]['cantidad'] -= 1
 
         self.guardar_carro()
 

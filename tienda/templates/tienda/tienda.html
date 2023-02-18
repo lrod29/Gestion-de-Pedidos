@@ -4,7 +4,43 @@
 
 
 {% block content %}
-  
-<div><p style="color: white">Tienda</p></div>
+
+    <div class="container">
+        <div class="row">
+
+    {% for producto in productos %}
+
+        <div class="col-md-3">
+            <div class="card" style="width: 100%; margin: 5px 5px;">
+
+            
+            <img src="{{producto.imagen.url}}" class="card-img-top">
+            <div class="card-body" style="text-align: center;">
+                <h6 class="card-title">{{producto.nombre}}</h6>
+                <p class="card-text">{{producto.precio}}$</p>
+            </div>
+
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+
+
+    <section>
+    <div style="width: 75%; margin: auto; text-align:center; color: white;">
+        Categorias: 
+        {% for post in posts %}
+            {% for categoria in post.categorias.all %}
+            
+                <a href="{% url 'categoria' categoria.id %}" class="linksCategorias" >{{categoria.nombre}}</a> &nbsp; &nbsp;
+
+            {% endfor %}
+            
+
+        {% endfor %}
+
+    </div>
+    </section>
 
 {% endblock %}

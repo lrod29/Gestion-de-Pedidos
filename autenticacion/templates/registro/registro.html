@@ -3,11 +3,15 @@
 {% load static %}
 
 
+
 {% block content %}
+<div style="width: 75%; margin:auto;">
+    <form method="post" style="color: white"> {% csrf_token %}
 
-<form method="post" style="color: white"> {% csrf_token %}
-    {{form}}
-    <button type="submit" class="btn btn-succes">Registrarse</button>
-</form>
+        {{form}}
 
+        <button type="submit" class="btn btn-success">Registrarse</button>
+
+    </form>
+    </div>
 {% endblock %}

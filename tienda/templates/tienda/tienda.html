@@ -7,7 +7,16 @@
 
     <div class="container">
         <div style="float: right ;">
-            {% include 'carro/widget.html' %}
+            {% if request.user.is_authenticated %}
+
+                {% include 'carro/widget.html' %}
+
+            {% else %}
+
+                <p style="color: white;">Login para acceder al Carro</p>
+                
+
+            {% endif %}
         </div>
         <div class="row">
 

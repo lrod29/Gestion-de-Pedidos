@@ -5,3 +5,4 @@ def importe_total_carro(request):
         for item in carro.values():
             total += float(item['precio']) * item['cantidad']
     return {'importe_total_carro': total}
+

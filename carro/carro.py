@@ -14,6 +14,10 @@ class Carro:
                 "cantidad": 0,
                 "imagen": producto.imagen.url
             }
+            
+        else:
+            self.carro[str(producto.id)]['precio']=float(self.carro[str(producto.id)]['precio'])+producto.precio
+        
         self.carro[str(producto.id)]['cantidad'] += 1
         self.guardar_carro()
 
@@ -32,6 +36,7 @@ class Carro:
             self.eliminar(producto)
         else:
             self.carro[str(producto.id)]['cantidad'] -= 1
+            self.carro[str(producto.id)]['precio']=float(self.carro[str(producto.id)]['precio'])-producto.precio
 
         self.guardar_carro()
 

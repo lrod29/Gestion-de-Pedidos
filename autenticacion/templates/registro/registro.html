@@ -5,15 +5,9 @@
 
 {% block content %}
 
-<p style="color: white;">Pagina Registro</p>
-{% comment %} <div class="contenedorFormulario">
-    {% if "valido" in request.GET %}
-        <p style="color: white;">Información enviada correctamente</p>
-    {% endif %}
-    <form action="" method="POST" style="text-align: center;"> {% csrf_token %}
-    <table style="color: white; margin: 20px auto;">{{miFormulario.as_table}}</table>
-    <input type="submit" value="Enviar">
-    </form>
-</div> {% endcomment %}
+<form method="post" style="color: white"> {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-succes">Registrarse</button>
+</form>
 
 {% endblock %}
